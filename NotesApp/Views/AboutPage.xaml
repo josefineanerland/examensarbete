@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NotesApp.Views.AboutPage"
+             xmlns:vm="clr-namespace:NotesApp.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
+                <Label FontSize="22">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Josefine Anerland" FontAttributes="Bold" FontSize="22" />
+                                <Span Text=" " />
+                                <Span Text="25 år" ForegroundColor="{StaticResource LightTextColor}" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Den här appen har jag utvecklat för att kunna lämna bort en roligare och utstickande version av mitt cv." />
+                                <Span Text=" " />
+                                <Span Text="Appen är utvecklad i Xamarin.Forms (5.0) och med target för iOS 14.4 samt Android 11." FontAttributes="Bold" />
+                                <Span Text="" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Så vem är jag?" FontAttributes="Bold" />
+                                <Span Text=" " />
+                                <Span Text="Som redan nämnt, Josefine 25 år. Bosatt i Stockholm med sambo och 2 hundar. Tog studenten från NTI-Gymnasiet 2014. Inriktning Interaktiv Design under Estet/Media-programmet." />
+                                <Span Text=" " />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Arbetade därefter ett par år inom olika serviceyrken, samt som vikarie för Järfälla Kommun." />
+                                <Span Text=" " />
+                                <Span Text="Och idag " FontAttributes="Bold" />
+                                <Span Text=" " />
+                                <Span Text="studerar jag systemutveckling .Net på IT-Högskolan i Stockholm." />
+                                <Span Text=" Planerad examens juni 2021. " FontAttributes="Bold" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Button Margin="0,10,0,0" Text="Klicka på Browse för att läsa mer"
+                        Command="{Binding}"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+    
+</ContentPage>

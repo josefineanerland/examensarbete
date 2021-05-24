@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NotesApp.Views.NoteDetailPage"
+             Title="{Binding Title}">
+
+        <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Edit" Clicked="EditNote_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Spacing="20" Padding="15">
+        <Label Text="Text:" FontSize="Medium" />
+        <Label Text="{Binding Note.Title}" FontSize="Small"/>
+        <Label Text="Date:" FontSize="Medium" />
+        <Label Text="{Binding Note.Date}" FontSize="Small"/>
+        <Label Text="Text:" FontSize="Medium" />
+        <Label Text="{Binding Note.Text}" FontSize="Small"/>
+    </StackLayout>
+    
+</ContentPage>
