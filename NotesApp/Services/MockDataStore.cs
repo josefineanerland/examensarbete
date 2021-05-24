@@ -14,11 +14,13 @@ namespace NotesApp.Services
         {
             notes = new List<Note>()
             {
-                new Note { Id = Guid.NewGuid().ToString(), Title = "Test", Text="Testar att skriva en text.", Date = DateTime.Now },
+                new Note { Id = Guid.NewGuid().ToString(), Title = "Josefine Anerland", Text="En 25årig glad tjej från Stockholm som nu är på jakt efter nya utmaningar!", Date = DateTime.Now },
                 new Note { Id = Guid.NewGuid().ToString(), Title = "Testar", Text="Du visste väl att du även kan klicka på About Me i menyn?", Date = DateTime.Now },
                 new Note { Id = Guid.NewGuid().ToString(), Title = "Testing", Text="Testar att skriva en text som är aningens längre än dom tidigare då jag vill se hur det kommer att se ut när texten är längre.", Date = DateTime.Now },
             };
         }
+
+
 
         public async Task<bool> AddNoteAsync(Note note)
         {
